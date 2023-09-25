@@ -40,11 +40,12 @@ class Order {
     }
 
     getTotalPrice() {
-        let sum = 0;
-        this.products.forEach(product => {
-            sum += product.price * product.quantity;
-        });
-        return sum;
+        // let sum = 0;
+        // this.products.forEach(product => {
+        //     sum += product.price * product.quantity;
+        // });
+        // return sum;
+        return this.products.reduce((sum, product) => sum += product.price * product.quantity, 0);
     }
 }
 
