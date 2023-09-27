@@ -15,20 +15,18 @@ getUserData использует fetch для получения данных о
 Работа должна быть выполнена с API: https://reqres.in/ */
 
 
-getUserData(5);
+console.log(getUserData(5));
 
 async function getUserData(id) {
   const url = `https://reqres.in/api/users/${id}`;
   try {
     const response = await fetch(url);
-
     if (response.ok) {
       const user = await response.json();
-      console.log(user.data);
+      return user.data;
     } else {
       throw Error(response.statusText);
     }
-
   } catch (error) {
     console.log(error.message);
   }
